@@ -36,9 +36,9 @@
     <% }) %>    
     </ul>
 
-    <h2><%= user.userName %> has <%= left %> outings planned.</h2>
+    <h2><%= user.userName %> has <%= itemsRemain %> outings planned.</h2>
 
-    <form action="/outings/createOutings " method='POST'>
+    <form action="/todos/createTodo" method='POST'>
         <input type="text" placeholder="Enter Outing Item" name='outingItem'>
         <input type="submit">
     </form>
