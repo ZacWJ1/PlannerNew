@@ -1,11 +1,16 @@
 const deleteBtn = document.querySelectorAll('.del')
+const deleteBtnOut = document.querySelectorAll('.del')
 const todoItem = document.querySelectorAll('span.not')
-//const outingItem = document.querySelectorAll('span.not')
+const markOutIncomplete = document.querySelectorAll('span.not')
 const todoComplete = document.querySelectorAll('span.completed')
-//const outingComplete = document.querySelectorAll('span.completed')
+const markOutComplete = document.querySelectorAll('span.completed')
 
 Array.from(deleteBtn).forEach((el)=>{
-    el.addEventListener('click', deleteTodo, deleteOutings)
+    el.addEventListener('click', deleteTodo)
+})
+
+Array.from(deleteBtnOut).forEach((el)=>{
+    el.addEventListener('click', deleteOutTodo)
 })
 
 Array.from(todoItem).forEach((el)=>{
@@ -16,13 +21,13 @@ Array.from(todoComplete).forEach((el)=>{
     el.addEventListener('click', markIncomplete)
 })
 
-/*Array.from(outingItem).forEach((el)=>{
-    el.addEventListener('click', markOutingsComplete)
+Array.from(markOutIncomplete).forEach((el)=>{
+    el.addEventListener('click', markOutingComplete)
 })
 
-Array.from(outingComplete).forEach((el)=>{
-    el.addEventListener('click',markOutingsIncomplete)
-})*/
+Array.from(markOutComplete).forEach((el)=>{
+    el.addEventListener('click',markOutingIncomplete)
+})
 
 async function deleteTodo(){
     const todoId = this.parentNode.dataset.id
@@ -42,10 +47,10 @@ async function deleteTodo(){
     }
 }
 
-/*async function deleteOutings(){
+async function deleteOutTodo(){
     const outingId = this.parentNode.dataset.id
     try{
-        const response = await fetch('outings/deleteOuting', {
+        const response = await fetch('todos/deleteOutTodo', {
             method: 'delete',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
@@ -58,7 +63,7 @@ async function deleteTodo(){
     }catch(err){
         console.log(err)
     }
-}*/
+}
 
 async function markComplete(){
     const todoId = this.parentNode.dataset.id
@@ -78,10 +83,10 @@ async function markComplete(){
     }
 }
 
-/*async function markOutingsComplete(){
+async function markOutingComplete(){
     const outingId = this.parentNode.dataset.id
     try{
-        const response = await fetch('outings/markOutingsComplete', {
+        const response = await fetch('todos/markOutingComplete', {
             method: 'put',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
@@ -94,7 +99,7 @@ async function markComplete(){
     }catch(err){
         console.log(err)
     }
-}*/
+}
 
 async function markIncomplete(){
     const todoId = this.parentNode.dataset.id
@@ -113,10 +118,10 @@ async function markIncomplete(){
         console.log(err)
     }
 }
-/*async function markOutingsIncomplete(){
+async function markOutingIncomplete(){
     const outingId = this.parentNode.dataset.id
     try{
-        const response = await fetch('outings/markOutingsIncomplete', {
+        const response = await fetch('todos/markOutingIncomplete', {
             method: 'put',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
@@ -129,4 +134,4 @@ async function markIncomplete(){
     }catch(err){
         console.log(err)
     }
-}*/
+}

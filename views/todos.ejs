@@ -9,7 +9,10 @@
     
 </head>
 <body>
-    <h1>Todos</h1>
+    <header>
+       <h1> <%= user.userName %>'s Planner </h1>
+    </header>
+    <h2>Todos</h2>
     <ul>
     <% todos.forEach( el => { %>
             <li class='todoItem' data-id='<%=el._id%>'>
@@ -19,16 +22,16 @@
     <% }) %>    
     </ul>
 
-    <h2><%= user.userName %> has <%= left %> things left to do.</h2>
+    <h3><%= user.userName %> has <%= left %> things left to do.</h3>
 
     <form action="/todos/createTodo" method='POST'>
         <input type="text" placeholder="Enter Todo Item" name='todoItem'>
         <input type="submit">
     </form>
 
-    <h1>Outings</h1>
+    <h2>Outings</h2>
     <ul>
-    <% outing.forEach( el => { %>
+    <% outings.forEach( el => { %>
             <li class='outingItem' data-id='<%=el._id%>'>
                 <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.outing %></span>
                 <span class='del'> Delete </span>
@@ -36,9 +39,9 @@
     <% }) %>    
     </ul>
 
-    <h2><%= user.userName %> has <%= itemsRemain %> outings planned.</h2>
+    <h3><%= user.userName %> has <%= outleft %> outings planned.</h3>
 
-    <form action="/todos/createTodo" method='POST'>
+    <form action="/todos/createOuting" method='POST'>
         <input type="text" placeholder="Enter Outing Item" name='outingItem'>
         <input type="submit">
     </form>
