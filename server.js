@@ -38,11 +38,12 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 app.use(flash())
-  
+
+//app.use('/outings',outingsRoutes)  
 app.use('/', mainRoutes)
 app.use('/todos', todoRoutes)
-//app.use('/outings',outingsRoutes)
- 
+
+
 app.listen(process.env.PORT, ()=>{
     console.log('Server is running, you better catch it!')
 })    

@@ -5,6 +5,8 @@ const markOutIncomplete = document.querySelectorAll('span.not')
 const todoComplete = document.querySelectorAll('span.completed')
 const markOutComplete = document.querySelectorAll('span.completed')
 
+
+
 Array.from(deleteBtn).forEach((el)=>{
     el.addEventListener('click', deleteTodo)
 })
