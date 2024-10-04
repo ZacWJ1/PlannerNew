@@ -1,24 +1,18 @@
 # Introduction
 
-A Simple ToDo App is built using the MVC Architecture, we have also implemented "authorization" so folx can sign up, customize & personalize the app 
-
----
-
-> Be sure to add that lovely star 😀 and fork it for your own copy
+A Simple ToDo Planner App is built using the MVC Architecture.
 
 ---
 
 # Objectives
 
-- It's a beginner level app created to understand how MVC concept and logins are added
+- It's a beginner level app created to understand how MVC concept and logins are added as well as authorizations.
 
 ---
 
 # Who is this for? 
 
-- It's for beginners & intermediates with little more experience, to help understand the various aspects of building a node app with some complex features
-
----
+- It's for people who want to create a list of todos or outings and keep track of them.
 
 # Packages/Dependencies used 
 
@@ -38,7 +32,6 @@ bcrypt, connect-mongo, dotenv, ejs, express, express-flash, express-session, mon
   - PORT: 2121 (can be any port example: 3000) 
   - DB_STRING: `your database URI` 
  ---
- 
- Have fun testing and improving it! 😎
-
+ #**Items to add in the future**
+A calendar to show events and to update them .
 
